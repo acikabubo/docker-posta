@@ -24,12 +24,12 @@ RUN pip3 install -r /tmp/reqs.txt
 
 RUN rm -rf /tmp/reqs/txt
 
-ADD . /posta_pratki
+ADD . /home/$user/posta_pratki
 
-RUN chown -R $user:$gid /posta_pratki
+RUN chown -R $user:$gid /home/$user/posta_pratki
 
 USER $user
 
-WORKDIR /posta_pratki
+WORKDIR /home/$user/posta_pratki
 
 CMD [ "python", "./pratki.py" ]
